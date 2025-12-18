@@ -1,1 +1,5 @@
-TODO
+{%- extends '@WexampleSymfonyLoaderTestingBundle/layouts/demo/layout.html.twig' -%}
+
+{% block page_body %}
+    {{ '@page::body' | trans }}
+{% endblock %}
