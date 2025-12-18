@@ -1,5 +1,7 @@
 {%- extends '@WexampleSymfonyLoaderTestingBundle/layouts/black/layout.html.twig' -%}
 
+{% import '@WexampleSymfonyDesignSystemBundle/macros/tabs.html.twig' as macro_tabs %}
+
 {# Has a header bar with mobile burger and user menu #}
 {%- block layout_composer_html -%}
     <header>
@@ -9,4 +11,8 @@
                 </a>
         </div>
     </header>
+            {{ macro_tabs.start(render_pass) }}
+            {{ macro_tabs.tab_to_page('_loader_testing_demo_index') }}
+            {{ macro_tabs.end() }}
+	        {{ parent() }}
 {%- endblock -%}
