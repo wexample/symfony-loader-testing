@@ -1,2 +1,3 @@
-console.log('TEST LAYOUT');
+import AppDemo from './class/AppTest';
 
+new AppDemo();
