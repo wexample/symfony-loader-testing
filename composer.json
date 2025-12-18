@@ -25,7 +25,8 @@
   ],
   "require": {
     "php": ">=8.2",
-    "wexample/symfony-loader": "0.0.1"
+    "wexample/symfony-loader": "0.0.1",
+    "wexample/symfony-design-system": "1.0.64"
   },
   "require-dev": {
     "phpunit/phpunit": "*"
