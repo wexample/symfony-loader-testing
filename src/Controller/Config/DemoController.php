@@ -3,7 +3,7 @@
 namespace Wexample\SymfonyLoaderTesting\Controller\Config;
 
 use Symfony\Component\Routing\Annotation\Route;
-use Wexample\SymfonyLoader\Traits\SymfonyLoaderBundleClassTrait;
+use Wexample\SymfonyLoaderTesting\Traits\SymfonyLoaderTestingBundleClassTrait;
 use Wexample\SymfonyRouting\Attribute\TemplateBasedRoutes;
 use Wexample\SymfonyHelpers\Helper\VariableHelper;
 
@@ -12,7 +12,7 @@ use Wexample\SymfonyHelpers\Helper\VariableHelper;
 final class DemoController extends AbstractLoaderTestingShowcaseController
 {
     // Trait exposes the bundle class so the route loader knows where to fetch the templates.
-    use SymfonyLoaderBundleClassTrait;
+    use SymfonyLoaderTestingBundleClassTrait;
 
     final public const ROUTE_INDEX = VariableHelper::INDEX;
 }
