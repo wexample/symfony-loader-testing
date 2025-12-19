@@ -5,6 +5,7 @@ export default abstract class extends AppChild {
     const styleDefault = 'border-radius:10rem;';
     const resolvedMessage = message ?? expected;
     const isEqual = value === expected;
+    const errorMessage = `Assertion failed, ${value} is not equal to expected value : ${expected}. ${resolvedMessage || ''}`;
 
     const logArgs: [string, string, string] = isEqual
       ? [
@@ -15,13 +16,13 @@ export default abstract class extends AppChild {
       : [
           '%c Fail ',
           `background: #FFCCCC; color: #880000; ${styleDefault}`,
-          `Assertion failed, ${value} is not equal to expected value : ${expected}. ${resolvedMessage || ''}`,
+          errorMessage,
         ];
 
     console.log(...logArgs);
 
     if (!isEqual && fatal) {
-      throw new Error('UNIT TEST ERROR');
+      throw new Error(errorMessage);
     }
   }
 
