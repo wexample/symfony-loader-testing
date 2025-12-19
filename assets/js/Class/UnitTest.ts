@@ -1,6 +1,9 @@
 import AppChild from "@wexample/js-app/Common/AppChild";
+import App from "@wexample/symfony-loader/js/Class/App";
 
 export default abstract class extends AppChild {
+  public app: App
+
   assertEquals(value: any, expected: any, message?: string, fatal: boolean = true) {
     const styleDefault = 'border-radius:10rem;';
     const resolvedMessage = message ?? expected;
@@ -9,15 +12,15 @@ export default abstract class extends AppChild {
 
     const logArgs: [string, string, string] = isEqual
       ? [
-          '%c Success ',
-          `background: #00FF00; color: #002200; ${styleDefault}`,
-          `${resolvedMessage}`,
-        ]
+        '%c Success ',
+        `background: #00FF00; color: #002200; ${styleDefault}`,
+        `${resolvedMessage}`,
+      ]
       : [
-          '%c Fail ',
-          `background: #FFCCCC; color: #880000; ${styleDefault}`,
-          errorMessage,
-        ];
+        '%c Fail ',
+        `background: #FFCCCC; color: #880000; ${styleDefault}`,
+        errorMessage,
+      ];
 
     console.log(...logArgs);
 
