@@ -1,8 +1,10 @@
 import TestManagerPage from '../../js/Class/TestManagerPage';
-
+import TestTest from "./class/TestTest";
 
 export default class extends TestManagerPage {
   async pageReady() {
-    console.log('PAGE READY')
+    await this.runTests({
+      TestTest,
+    });
   }
 }
