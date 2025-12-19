@@ -1,5 +1,20 @@
 {%- extends '@WexampleSymfonyLoaderTestingBundle/layouts/test/layout.html.twig' -%}
 
+{%- block layout_config -%}
+    {{ parent() }}
+    {{- var_export(render_pass, 'initialLayoutVar', true) -}}
+    {{- var_export(render_pass, 'enableAggregation', render_pass.enableAggregation) -}}
+{%- endblock -%}
+
+{%- block page_config -%}
+    {{ parent() }}
+    {{- var_export(render_pass, 'initialPageVar', true) -}}
+    {{- var_export(render_pass, 'demoVariableBoolean', true) -}}
+    {{- var_export(render_pass, 'demoVariableInteger', 123) -}}
+    {{- var_export(render_pass, 'demoVariableFloat', 12.3) -}}
+    {{- var_export(render_pass, 'demoVariableObject', {testVar:'test'}) -}}
+{%- endblock -%}
+
 {%- block page_body -%}
     <div class="test-string">TESTS PAGE</div>
-{% endblock %}
+{%- endblock -%}
