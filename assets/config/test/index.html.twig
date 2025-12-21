@@ -4,6 +4,7 @@
     {{ parent() }}
     {{- var_export(render_pass, 'initialLayoutVar', true) -}}
     {{- var_export(render_pass, 'enableAggregation', render_pass.enableAggregation) -}}
+    {{- trans_js(render_pass, '@layout::string.client_side') -}}
 {%- endblock -%}
 
 {%- block page_config -%}
@@ -17,4 +18,5 @@
 
 {%- block page_body -%}
     <div class="test-string">TESTS PAGE</div>
+    <div id="test-layout-translation">{{ '@layout::secondGroup.first' | trans }}</div>
 {%- endblock -%}
