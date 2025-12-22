@@ -7,12 +7,14 @@ import VariablesTest from "./class/VariablesTest";
 import TranslationTest from "./class/TranslationTest";
 import AdaptiveRenderingTest from "./class/AdaptiveRenderingTest";
 import NoJsTest from "./class/NoJsTest";
+import AggregationTest from "./class/AggregationTest";
 
 
 export default class extends TestManagerPage {
   async pageReady() {
     await this.runTests({
       AdaptiveRenderingTest,
+      AggregationTest,
       AppTest,
       LayoutTest,
       NoJsTest,
