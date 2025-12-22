@@ -8,6 +8,7 @@ import TranslationTest from "./class/TranslationTest";
 import AdaptiveRenderingTest from "./class/AdaptiveRenderingTest";
 import NoJsTest from "./class/NoJsTest";
 import AggregationTest from "./class/AggregationTest";
+import ResponsiveTest from "./class/ResponsiveTest";
 
 
 export default class extends TestManagerPage {
@@ -18,10 +19,19 @@ export default class extends TestManagerPage {
       AppTest,
       LayoutTest,
       NoJsTest,
+      ResponsiveTest,
       RoutingTest,
       TestTest,
       TranslationTest,
       VariablesTest
     });
+
+    // Run test without aggregation.
+    const location = window.location;
+    if (!this.app.layout.vars.enableAggregation && !(new URLSearchParams(location.search)).get('no-test-aggregation')) {
+      location.replace(
+        `${location.origin}${location.pathname}?test-aggregation=1`
+      );
+    }
   }
 }
