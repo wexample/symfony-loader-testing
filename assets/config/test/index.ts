@@ -6,6 +6,7 @@ import RoutingTest from "./class/RoutingTest";
 import VariablesTest from "./class/VariablesTest";
 import TranslationTest from "./class/TranslationTest";
 import AdaptiveRenderingTest from "./class/AdaptiveRenderingTest";
+import NoJsTest from "./class/NoJsTest";
 
 
 export default class extends TestManagerPage {
@@ -14,6 +15,7 @@ export default class extends TestManagerPage {
       AdaptiveRenderingTest,
       AppTest,
       LayoutTest,
+      NoJsTest,
       RoutingTest,
       TestTest,
       TranslationTest,

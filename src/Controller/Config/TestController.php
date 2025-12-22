@@ -24,8 +24,19 @@ final class TestController extends AbstractLoaderTestingShowcaseController
     #[Route(path: self::ROUTE_ADAPTIVE, name: self::ROUTE_ADAPTIVE, options: self::ROUTE_OPTIONS_ONLY_EXPOSE)]
     final public function adaptive(Request $request): Response
     {
+        $renderPass = $this->createRenderPass(
+            $this->buildControllerTemplatePath(
+                self::ROUTE_ADAPTIVE,
+            )
+        );
+
+        if ($request->query->has('no-js') and $request->query->get('no-js')) {
+            $renderPass->setUseJs(false);
+        }
+
         return $this->renderPage(
             self::ROUTE_ADAPTIVE,
+            renderPass: $renderPass
         );
     }
 

@@ -13,3 +13,11 @@
     {{- var_export(render_pass, 'pageLevelTestVar', 'value') -}}
 {%- endblock -%}
 
+{%- block page_body -%}
+    <ul>
+        {% if not render_pass.useJs %}
+            <li>NO_JS_TEXT</li>
+        {% endif %}
+    </ul>
+{%- endblock -%}
+
