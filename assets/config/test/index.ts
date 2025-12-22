@@ -5,11 +5,13 @@ import LayoutTest from "./class/LayoutTest";
 import RoutingTest from "./class/RoutingTest";
 import VariablesTest from "./class/VariablesTest";
 import TranslationTest from "./class/TranslationTest";
+import AdaptiveRenderingTest from "./class/AdaptiveRenderingTest";
 
 
 export default class extends TestManagerPage {
   async pageReady() {
     await this.runTests({
+      AdaptiveRenderingTest,
       AppTest,
       LayoutTest,
       RoutingTest,

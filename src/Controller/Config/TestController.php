@@ -17,13 +17,32 @@ final class TestController extends AbstractLoaderTestingShowcaseController
     use SymfonyLoaderTestingBundleClassTrait;
 
     final public const ROUTE_ADAPTIVE = 'adaptive';
+    final public const ROUTE_ERROR_MISSING_VIEW = 'error_missing_view';
     final public const ROUTE_INDEX = VariableHelper::INDEX;
+    final public const ROUTE_VIEW = VariableHelper::VIEW;
 
     #[Route(path: self::ROUTE_ADAPTIVE, name: self::ROUTE_ADAPTIVE, options: self::ROUTE_OPTIONS_ONLY_EXPOSE)]
     final public function adaptive(Request $request): Response
     {
         return $this->renderPage(
             self::ROUTE_ADAPTIVE,
+        );
+    }
+
+    #[Route(path: self::ROUTE_VIEW, name: self::ROUTE_VIEW, options: self::ROUTE_OPTIONS_ONLY_EXPOSE)]
+    public function view(): Response
+    {
+        return $this->renderPage(
+            self::ROUTE_VIEW,
+            bundle: self::getBundleClassName()
+        );
+    }
+
+    #[Route(path: 'error-missing-view', name: self::ROUTE_ERROR_MISSING_VIEW, options: self::ROUTE_OPTIONS_ONLY_EXPOSE)]
+    public function errorMissingVue(): Response
+    {
+        return $this->renderPage(
+            self::ROUTE_ERROR_MISSING_VIEW
         );
     }
 }
