@@ -1,4 +1,5 @@
 import AbstractTest from "./AbstractTest";
+import { LocaleRenderNodeMixin } from "@wexample/symfony-loader/js/Services/Mixins/Locale/LocaleRenderNodeMixin";
 
 export default class TranslationTest extends AbstractTest {
   public getTestMethods() {
@@ -12,7 +13,7 @@ export default class TranslationTest extends AbstractTest {
       'Initial layout server translation works'
     );
 
-    const page = this.app.layout.page;
+    const page = (this.app.layout.page as LocaleRenderNodeMixin as any);
 
     this.assertEquals(
       page.trans('@layout::string.client_side'),
