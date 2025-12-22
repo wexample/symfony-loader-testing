@@ -14,6 +14,8 @@
     {{- var_export(render_pass, 'demoVariableInteger', 123) -}}
     {{- var_export(render_pass, 'demoVariableFloat', 12.3) -}}
     {{- var_export(render_pass, 'demoVariableObject', {testVar:'test'}) -}}
+    {{- trans_js(render_pass, '@page::firstGroup.*') -}}
+    {{- trans_js(render_pass, '@page::secondGroup.first') -}}
 {%- endblock -%}
 
 {%- block page_body -%}
