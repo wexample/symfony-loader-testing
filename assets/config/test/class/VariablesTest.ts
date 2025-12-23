@@ -44,6 +44,11 @@ export default class VariablesTest extends AbstractTest {
       '@WexampleSymfonyLoaderBundle/components/test-component'
     ) as Component;
 
+    this.assertTrue(
+      component.vars.testComponentVar,
+      'Component level var is set'
+    );
+
     this.fetchAdaptiveAjaxPage()
       .then((renderData: LayoutInterface) => {
 
