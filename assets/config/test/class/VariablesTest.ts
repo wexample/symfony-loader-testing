@@ -1,5 +1,6 @@
 import AbstractTest from "./AbstractTest";
 import LayoutInterface from "@wexample/symfony-loader/js/Interfaces/RenderData/LayoutInterface";
+import Component from "@wexample/symfony-loader/js/Class/Component";
 
 export default class VariablesTest extends AbstractTest {
   public getTestMethods() {
@@ -38,6 +39,10 @@ export default class VariablesTest extends AbstractTest {
       typeof this.app.layout.page.vars.demoVariableObject === 'object',
       'Variable object has proper value type'
     );
+
+    const component = this.app.layout.page.findChildRenderNodeByView(
+      '@WexampleSymfonyLoaderBundle/components/test-component'
+    ) as Component;
 
     this.fetchAdaptiveAjaxPage()
       .then((renderData: LayoutInterface) => {
