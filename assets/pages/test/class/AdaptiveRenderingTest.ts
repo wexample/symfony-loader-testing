@@ -31,7 +31,7 @@ export default class AdaptiveRenderingTest extends AbstractTest {
 
       this.assertEquals(
         pageFocused.view,
-        `@WexampleSymfonyLoaderBundle/pages/test/adaptive`,
+        `@WexampleSymfonyLoaderTestingBundle/pages/test/adaptive`,
         'The focused page is the modal content page'
       );
 
