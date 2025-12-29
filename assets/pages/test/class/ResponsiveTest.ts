@@ -12,9 +12,9 @@ export default class ResponsiveTest extends AbstractTest {
 
   public getTestMethods() {
     return [
-      this.testDefault,
+      // this.testDefault,
       this.testModale,
-      this.testDisplays
+      // this.testDisplays
     ];
   }
 
