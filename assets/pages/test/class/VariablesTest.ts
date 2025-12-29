@@ -1,7 +1,7 @@
 import AbstractTest from "./AbstractTest";
 import Component from '@wexample/symfony-loader/js/Class/Component';
-import LayoutInterface from '../../../js/Interfaces/RenderData/LayoutInterface';
-import ModalComponent from '../../../components/modal';
+import LayoutInterface from '@wexample/symfony-loader/js/Interfaces/RenderData/LayoutInterface';
+import ModalComponent from '@wexample/symfony-loader/components/modal';
 
 export default class VariablesTest extends AbstractTest {
   public getTestMethods() {

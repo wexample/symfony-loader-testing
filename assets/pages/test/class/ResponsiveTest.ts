@@ -3,8 +3,8 @@ import { timeSleep } from '@wexample/js-helpers/Helper/Time';
 import { domAppendInnerHtml } from '@wexample/js-helpers/Helper/Dom';
 import RenderNode from '@wexample/symfony-loader/js/Class/RenderNode';
 import Component from '@wexample/symfony-loader/js/Class/Component';
-import { RenderNodeResponsiveType } from "../../../js/Services/ResponsiveService";
-import Page from "../../../js/Class/Page";
+import { RenderNodeResponsiveType } from '@wexample/symfony-loader/js/Services/ResponsiveService';
+import Page from '@wexample/symfony-loader/js/Class/Page';
 
 export default class ResponsiveTest extends AbstractTest {
   responsiveActivationWaitDuration: number = 20;

@@ -1,5 +1,5 @@
-import ModalComponent from '../../../components/modal';
-import LayoutInterface from '../../../js/Interfaces/RenderData/LayoutInterface';
+import ModalComponent from '@wexample/symfony-loader/components/modal';
+import LayoutInterface from '@wexample/symfony-loader/js/Interfaces/RenderData/LayoutInterface';
 import { timeSleep } from '@wexample/js-helpers/Helper/Time';
 import { stringToScreamingSnake } from '@wexample/js-helpers/Helper/String';
 import AbstractTest from "./AbstractTest";

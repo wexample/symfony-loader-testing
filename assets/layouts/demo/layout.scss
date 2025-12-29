@@ -1,23 +1,23 @@
 // Layout.
-@use '../../layouts/black/layout';
+@use '@wexample/symfony-loader/layouts/black/layout';
 
 // Base partials.
-@use '../../css/partials/debug';
+@use '@wexample/symfony-loader/css/partials/debug';
 
 // Base shapes.
-@use '../../css/shapes/layout-reset-modern';
-@use '../../css/shapes/container';
-@use '../../css/shapes/pill';
-@use '../../css/shapes/tab';
+@use '@wexample/symfony-loader/css/shapes/layout-reset-modern';
+@use '@wexample/symfony-loader/css/shapes/container';
+@use '@wexample/symfony-loader/css/shapes/pill';
+@use '@wexample/symfony-loader/css/shapes/tab';
 
 // Local partials.
 @use './partials/header';
 
 // Allowed partials in all pages.
-@use '../../css/shapes/block';
+@use '@wexample/symfony-loader/css/shapes/block';
 
 // Base imports
-@use '../../css/partials/global' as *;
+@use '@wexample/symfony-loader/css/partials/global' as *;
 
 body {
   font-family: 'Work Sans Regular', sans-serif;

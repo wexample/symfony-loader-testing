@@ -1,10 +1,10 @@
 $global-color-scheme-name: 'dark' !default;
 
-@use '../../css/shapes/inline-info.color-scheme.dark' with (
+@use '@wexample/symfony-loader/css/shapes/inline-info.color-scheme.dark' with (
   $global-color-scheme-name: $global-color-scheme-name
 );
 
-@use '../../css/mixins/global.color-scheme.dark' as *;
+@use '@wexample/symfony-loader/css/mixins/global.color-scheme.dark' as *;
 
 .display-breakpoint {
   .size-name {

@@ -1,6 +1,6 @@
 import AbstractTest from "./AbstractTest";
-import LayoutInterface from '../../../js/Interfaces/RenderData/LayoutInterface';
-import VueComponent from "../../../components/vue";
+import LayoutInterface from '@wexample/symfony-loader/js/Interfaces/RenderData/LayoutInterface';
+import VueComponent from '@wexample/symfony-loader/components/vue';
 
 export default class VueTest extends AbstractTest {
   public getTestMethods() {

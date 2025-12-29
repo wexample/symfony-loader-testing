@@ -1,5 +1,4 @@
 import AbstractTest from "./AbstractTest";
-import Routing from 'fos-router';
 
 export default class RoutingTest extends AbstractTest {
   public getTestMethods() {
@@ -10,7 +9,7 @@ export default class RoutingTest extends AbstractTest {
 
   private testNotEmpty() {
     this.assertTrue(
-      Object.values(Routing.getRoutes()).length > 0,
+      Object.values(this.app.services.routing.getRoutes()).length > 0,
       'Some routes are registered'
     )
   }
