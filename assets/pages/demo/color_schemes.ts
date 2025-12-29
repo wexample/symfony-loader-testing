@@ -1,4 +1,4 @@
-import Page from '../../js/Class/Page';
+import Page from '@wexample/symfony-loader/js/Class/Page';
 import { EVENT } from '@wexample/js-helpers/Helper/Event';
 
 export default class extends Page {

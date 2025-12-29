@@ -1,7 +1,7 @@
-import Page from'../../js/Class/Page';
-import ModalsService from'../../js/Services/ModalsService';
-import AppService from'../../js/Class/AppService';
-import ServicesRegistryInterface from'../../js/Interfaces/ServicesRegistryInterface';
+import Page from '@wexample/symfony-loader/js/Class/Page';
+import ModalsService from '@wexample/symfony-loader/js/Services/ModalsService';
+import AppService from '@wexample/symfony-loader/js/Class/AppService';
+import ServicesRegistryInterface from '@wexample/symfony-loader/js/Interfaces/ServicesRegistryInterface';
 
 export default class extends Page {
   services: ServicesRegistryInterface;

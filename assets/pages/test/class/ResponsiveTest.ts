@@ -1,8 +1,8 @@
 import AbstractTest from "./AbstractTest";
 import { timeSleep } from '@wexample/js-helpers/Helper/Time';
 import { domAppendInnerHtml } from '@wexample/js-helpers/Helper/Dom';
-import RenderNode from '../../../js/Class/RenderNode';
-import Component from '../../../js/Class/Component';
+import RenderNode from '@wexample/symfony-loader/js/Class/RenderNode';
+import Component from '@wexample/symfony-loader/js/Class/Component';
 import { RenderNodeResponsiveType } from "../../../js/Services/ResponsiveService";
 import Page from "../../../js/Class/Page";
 

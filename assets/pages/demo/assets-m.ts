@@ -1,4 +1,4 @@
-import PageResponsiveDisplay from '../../js/Class/PageResponsiveDisplay';
+import PageResponsiveDisplay from '@wexample/symfony-loader/js/Class/PageResponsiveDisplay';
 
 export default class extends PageResponsiveDisplay {
   elButton: HTMLElement;
