@@ -9,11 +9,12 @@ use Wexample\SymfonyLoader\Controller\AbstractPagesController;
 use Wexample\SymfonyLoader\Service\Usage\FontsAssetUsageService;
 use Wexample\SymfonyLoader\Traits\SymfonyLoaderBundleClassTrait;
 use Wexample\SymfonyHelpers\Helper\VariableHelper;
+use Wexample\SymfonyLoaderTesting\Traits\SymfonyLoaderTestingBundleClassTrait;
 
 #[Route(path: '_loader/test/', name: '_loader_test_')]
 final class TestController extends AbstractPagesController
 {
-    use SymfonyLoaderBundleClassTrait;
+    use SymfonyLoaderTestingBundleClassTrait;
 
     final public const ROUTE_ADAPTIVE = 'adaptive';
     final public const ROUTE_ERROR_MISSING_VIEW = 'error_missing_view';

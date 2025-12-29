@@ -6,17 +6,17 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Wexample\SymfonyHelpers\Attribute\SimpleRoutesController;
+use Wexample\SymfonyHelpers\Helper\VariableHelper;
 use Wexample\SymfonyLoader\Controller\AbstractPagesController;
 use Wexample\SymfonyLoader\Rendering\RenderPass;
 use Wexample\SymfonyLoader\Service\Usage\FontsAssetUsageService;
-use Wexample\SymfonyLoader\Traits\SymfonyLoaderBundleClassTrait;
-use Wexample\SymfonyHelpers\Helper\VariableHelper;
+use Wexample\SymfonyLoaderTesting\Traits\SymfonyLoaderTestingBundleClassTrait;
 
 #[Route(path: '_loader/demo/', name: '_loader_demo_')]
 #[SimpleRoutesController]
 final class DemoController extends AbstractPagesController
 {
-    use SymfonyLoaderBundleClassTrait;
+    use SymfonyLoaderTestingBundleClassTrait;
 
     final public const ROUTE_INDEX = VariableHelper::INDEX;
     final public const ROUTE_ASSETS = VariableHelper::ASSETS;
@@ -24,7 +24,7 @@ final class DemoController extends AbstractPagesController
     final public const ROUTE_COLOR_SCHEMES = 'color_schemes';
     final public const ROUTE_ICONS = 'icons';
     final public const ROUTE_LOADING = VariableHelper::LOADING;
-    final public const ROUTE_LOADING_FETCH_SIMPLE = VariableHelper::LOADING.'_fetch_simple';
+    final public const ROUTE_LOADING_FETCH_SIMPLE = VariableHelper::LOADING . '_fetch_simple';
     final public const ROUTE_TRANSLATIONS = VariableHelper::TRANSLATIONS;
     final public const ROUTE_COMPONENTS = VariableHelper::PLURAL_COMPONENT;
 
@@ -51,7 +51,8 @@ final class DemoController extends AbstractPagesController
 
     protected function configureRenderPass(
         RenderPass $renderPass
-    ): RenderPass {
+    ): RenderPass
+    {
         $renderPass->setUseJs($this->useJs);
 
         $renderPass->setUsage(
