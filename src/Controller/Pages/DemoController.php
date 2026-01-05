@@ -51,8 +51,7 @@ final class DemoController extends AbstractPagesController
 
     protected function configureRenderPass(
         RenderPass $renderPass
-    ): RenderPass
-    {
+    ): RenderPass {
         $renderPass->setUseJs($this->useJs);
 
         $renderPass->setUsage(
@@ -69,7 +68,7 @@ final class DemoController extends AbstractPagesController
     )]
     final public function assets(Request $request): Response
     {
-        $this->useJs = !$request->get('no_js');
+        $this->useJs = ! $request->get('no_js');
 
         return $this->renderPage(
             self::ROUTE_ASSETS,
