@@ -1,6 +1,6 @@
 # wexample/symfony-loader-testing
 
-Version: 0.0.3
+Version: 0.0.4
 
 A dynamic rendering system for Symfony
 
@@ -148,8 +148,8 @@ Refer to each package's documentation for specific version compatibility require
 ## Dependencies
 
 - php: >=8.2
-- wexample/symfony-loader: 0.0.4
-- wexample/symfony-design-system: 1.0.66
+- wexample/symfony-loader: 0.0.5
+- wexample/symfony-design-system: 1.0.67
 
 
 # About us
