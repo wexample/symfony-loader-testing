@@ -2,7 +2,7 @@ import ModalComponent from '@wexample/symfony-loader/components/modal';
 import LayoutInterface from '@wexample/symfony-loader/js/Interfaces/RenderData/LayoutInterface';
 import { timeSleep } from '@wexample/js-helpers/Helper/Time';
 import { stringToScreamingSnake } from '@wexample/js-helpers/Helper/String';
-import AbstractTest from "./AbstractTest";
+import AbstractTest from "./AbstractTest.js";
 import { domCreateHtmlDocumentFromHtml } from "@wexample/js-helpers/Helper/Dom";
 
 export default class AdaptiveRenderingTest extends AbstractTest {

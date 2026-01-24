@@ -1,4 +1,4 @@
-import AbstractTest from "./AbstractTest";
+import AbstractTest from "./AbstractTest.js";
 import { timeSleep } from '@wexample/js-helpers/Helper/Time';
 import { domAppendInnerHtml } from '@wexample/js-helpers/Helper/Dom';
 import RenderNode from '@wexample/symfony-loader/js/Class/RenderNode';

@@ -1,4 +1,4 @@
-import AbstractTest from "./AbstractTest";
+import AbstractTest from "./AbstractTest.js";
 import Component from '@wexample/symfony-loader/js/Class/Component';
 import LayoutInterface from '@wexample/symfony-loader/js/Interfaces/RenderData/LayoutInterface';
 import ModalComponent from '@wexample/symfony-loader/components/modal';

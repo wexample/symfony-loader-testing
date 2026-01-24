@@ -1,4 +1,4 @@
-import AbstractTest from "./AbstractTest";
+import AbstractTest from "./AbstractTest.js";
 import { domCreateHtmlDocumentFromHtml } from "@wexample/js-helpers/Helper/Dom";
 
 export default class LayoutTest extends AbstractTest {
