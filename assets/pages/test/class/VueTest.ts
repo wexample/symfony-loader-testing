@@ -1,4 +1,4 @@
-import AbstractTest from "./AbstractTest.js";
+import AbstractTest from "./AbstractTest";
 import LayoutInterface from '@wexample/symfony-loader/js/Interfaces/RenderData/LayoutInterface';
 import VueComponent from '@wexample/symfony-loader/components/vue';
 

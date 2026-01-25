@@ -1,4 +1,4 @@
-import App from '../../js/Class/TestApp.js';
+import App from '../../js/Class/TestApp';
 
 window["TEST_LAYOUT_ENTRYPOINT_LOADED"] = true;
 

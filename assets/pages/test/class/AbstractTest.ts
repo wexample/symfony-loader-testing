@@ -1,4 +1,4 @@
-import UnitTest from '../../../js/Class/UnitTest.js';
+import UnitTest from '../../../js/Class/UnitTest';
 import LayoutInterface from '@wexample/symfony-loader/js/Interfaces/RenderData/LayoutInterface';
 
 export default abstract class AbstractTest extends UnitTest {

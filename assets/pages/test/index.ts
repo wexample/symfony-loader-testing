@@ -1,20 +1,20 @@
-import AggregationTest from './class/AggregationTest.js';
-import AdaptiveRenderingTest from './class/AdaptiveRenderingTest.js';
-import AppTest from './class/AppTest.js';
-import HelperTest from './class/HelperTest.js';
-import IconTest from './class/IconTest.js';
-import ModalInModalTest from './class/ModalInModalTest.js';
-import NoJsTest from './class/NoJsTest.js';
-import OverlayTest from './class/OverlayTest.js';
-import ResponsiveTest from './class/ResponsiveTest.js';
-import RoutingTest from './class/RoutingTest.js';
-import TestTest from './class/TestTest.js';
-import TranslationTest from './class/TranslationTest.js';
-import UsageTest from './class/UsageTest.js';
-import VariablesTest from './class/VariablesTest.js';
-import TestManagerPage from '../../js/Class/TestManagerPage.js';
-import LayoutTest from "./class/LayoutTest.js";
-import VueTest from "./class/VueTest.js";
+import AggregationTest from './class/AggregationTest';
+import AdaptiveRenderingTest from './class/AdaptiveRenderingTest';
+import AppTest from './class/AppTest';
+import HelperTest from './class/HelperTest';
+import IconTest from './class/IconTest';
+import ModalInModalTest from './class/ModalInModalTest';
+import NoJsTest from './class/NoJsTest';
+import OverlayTest from './class/OverlayTest';
+import ResponsiveTest from './class/ResponsiveTest';
+import RoutingTest from './class/RoutingTest';
+import TestTest from './class/TestTest';
+import TranslationTest from './class/TranslationTest';
+import UsageTest from './class/UsageTest';
+import VariablesTest from './class/VariablesTest';
+import TestManagerPage from '../../js/Class/TestManagerPage';
+import LayoutTest from "./class/LayoutTest";
+import VueTest from "./class/VueTest";
 
 
 export default class extends TestManagerPage {

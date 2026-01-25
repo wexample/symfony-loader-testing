@@ -1,5 +1,5 @@
 import Page from '@wexample/symfony-loader/js/Class/Page';
-import UnitTest from './UnitTest.js';
+import UnitTest from './UnitTest';
 
 export default class TestManagerPage extends Page {
   async runTests(tests) {

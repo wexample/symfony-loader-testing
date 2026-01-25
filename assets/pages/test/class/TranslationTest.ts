@@ -1,4 +1,4 @@
-import AbstractTest from "./AbstractTest.js";
+import AbstractTest from "./AbstractTest";
 import { RenderNodeLocaleType } from "@wexample/symfony-loader/js/Services/LocaleService";
 
 export default class TranslationTest extends AbstractTest {

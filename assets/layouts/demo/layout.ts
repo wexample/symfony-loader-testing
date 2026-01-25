@@ -1,3 +1,3 @@
-import AppDemo from './class/AppDemo.js';
+import AppDemo from './class/AppDemo';
 
 export default new AppDemo();

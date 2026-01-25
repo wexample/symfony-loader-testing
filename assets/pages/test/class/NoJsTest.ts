@@ -1,4 +1,4 @@
-import AbstractTest from "./AbstractTest.js";
+import AbstractTest from "./AbstractTest";
 
 export default class NoJsTest extends AbstractTest {
   public getTestMethods() {
