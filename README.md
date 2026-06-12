@@ -1,6 +1,6 @@
 # symfony_loader_testing
 
-Version: 0.0.21
+Version: 0.0.22
 
 A dynamic rendering system for Symfony
 
