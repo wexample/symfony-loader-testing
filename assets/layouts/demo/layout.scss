@@ -6,15 +6,16 @@
 
 // Base shapes.
 @use '@wexample/symfony-loader/css/shapes/layout-reset-modern';
-@use '@wexample/symfony-loader/css/shapes/container';
+@use '@wexample/symfony-design-system/css/shapes/container';
 @use '@wexample/symfony-loader/css/shapes/pill';
-@use '@wexample/symfony-loader/css/shapes/tab';
+@use '@wexample/symfony-design-system/css/shapes/tab';
 
 // Local partials.
 @use './partials/header';
 
 // Allowed partials in all pages.
-@use '@wexample/symfony-loader/css/shapes/block';
+@use '@wexample/symfony-design-system/css/shapes/block';
+@use '@wexample/symfony-design-system/css/shapes/stack';
 
 // Base imports
 @use '@wexample/symfony-loader/css/partials/global' as *;

@@ -7,8 +7,8 @@
         </div>
     </div>
     <h2>{{ '@page::breakpoints.title' | trans }}</h2>
-    <div class="blocks blocks-no-stretch blocks-side-column-left">
-        <div class="blocks-col">
+    <div class="stack--horizontal">
+        <div>
             {% for name, sizeMin in display_breakpoints %}
                 <div class="inline-info display-breakpoint display-breakpoint-{{ name }}">
                     <div class="pill size-name">{{ name }}</div>
@@ -16,7 +16,7 @@
                 </div>
             {% endfor %}
         </div>
-        <div class="block color-scheme-light">
+        <div class="block block--body">
             {{ '@page::breakpoints.body' | trans | raw }}
             <br>
             <br>
@@ -24,14 +24,14 @@
         </div>
     </div>
     <h2>{{ '@page::resources.title' | trans }}</h2>
-    <div class="block">
+    <div class="block block--body">
         {{ ('@page::resources.body_' ~ (render_pass.isUseJs() ? '' : 'no_') ~ 'js') | trans | raw }}
 	    {% if render_pass.isUseJs() %}
 	        {{ vue(render_pass, '@WexampleSymfonyLoaderBundle/vue/debug-assets') }}
 	    {% endif %}
     </div>
     <h2>{{ '@page::page.title' | trans }}</h2>
-    <div class="block">
+    <div class="block block--body">
         {{ '@page::page.body' | trans }}
         <div>
             <br>

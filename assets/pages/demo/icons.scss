@@ -1,5 +1,5 @@
 @use '@wexample/symfony-loader/css/shapes/block';
-@use '@wexample/symfony-loader/css/shapes/grid';
+@use '@wexample/symfony-design-system/css/shapes/grid';
 
 .icons-list {
   @extend .block;
