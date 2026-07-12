@@ -25,7 +25,6 @@ final class DemoController extends AbstractPagesController
     final public const ROUTE_ICONS = 'icons';
     final public const ROUTE_LOADING = VariableHelper::LOADING;
     final public const ROUTE_LOADING_FETCH_SIMPLE = VariableHelper::LOADING . '_fetch_simple';
-    final public const ROUTE_TRANSLATIONS = VariableHelper::TRANSLATIONS;
     final public const ROUTE_COMPONENTS = VariableHelper::PLURAL_COMPONENT;
 
     private bool $useJs = true;
@@ -37,7 +36,6 @@ final class DemoController extends AbstractPagesController
             self::ROUTE_ICONS,
             self::ROUTE_LOADING,
             self::ROUTE_LOADING_FETCH_SIMPLE,
-            self::ROUTE_TRANSLATIONS,
         ];
     }
 
