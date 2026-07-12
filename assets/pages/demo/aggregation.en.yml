@@ -1,0 +1,13 @@
+page_title: Aggregation
+
+aggregation:
+  title: Asset Aggregation
+  body: >
+    Asset aggregation is a feature that simplifies resource management by grouping multiple CSS or JavaScript
+    files into a single compacted file. This approach reduces the number of HTTP requests needed when loading
+    a page, significantly improving load times and user experience.
+    <br><br>The aggregation process analyzes and merges files by type, minimizing their size. The result is a
+    more responsive site with optimized resources for fast delivery and improved performance.
+    <br><br>The aggregation process examines assets that can be aggregated, taking into account their
+    dependencies and how they are used within the page. This analysis ensures compatibility with dynamic
+    component loading.

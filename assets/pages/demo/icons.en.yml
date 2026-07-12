@@ -1,0 +1,15 @@
+page_title: Icons
+
+introduction:
+  title: Introduction
+  body: >
+    Two icon sets are available to enrich the interface: "Font Awesome" for general use across the
+    interface, and "Material Design Icons" which pair well with Material Design elements such as buttons,
+    menus, etc.
+
+    Icons are embedded directly in the page body using their SVG format. This eliminates the need to load
+    additional icon fonts, offering a lighter solution for partial usage. Using SVGs also has the advantage
+    of making icons fully responsive to the page's JavaScript.
+
+    To optimize page performance, loaded icons are cached. This approach ensures a smooth and responsive
+    user experience by reducing load times on repeat visits.

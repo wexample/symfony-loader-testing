@@ -1,0 +1,20 @@
+page_title: Components
+
+components:
+  init:
+    title: Initialization
+    class:
+      title: Via a CSS class
+      body: This component treats the DOM element that has the auto-generated CSS class as its main element.
+    parent:
+      title: Via the parent
+      body: This component treats its containing DOM element as its main element.
+    previous:
+      title: Via the previous element
+      body: This component treats the preceding DOM element as its main element.
+    server_side:
+      title: With server-side processing
+      body: >
+        This component is produced by a PHP class on the server side. This allows the component to perform
+        tasks such as reading files, connecting to the database, using services, or modifying page content
+        during the rendering process.
