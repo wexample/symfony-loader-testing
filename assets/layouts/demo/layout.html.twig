@@ -4,3 +4,17 @@
     {{- render_pass.layoutRenderNode.setDefaultView(_self) -}}
     {{- parent() -}}
 {%- endblock -%}
+
+{% block page_menu_sub_loader_demo %}
+    <ul class="menu--sub-items">
+        {{ menu_item('_loader_demo_index') }}
+        {{ menu_item('_loader_demo_assets') }}
+        {{ menu_item('_loader_demo_aggregation') }}
+        {{ menu_item('_loader_demo_color_schemes') }}
+        {{ menu_item('_loader_demo_components') }}
+        {{ menu_item('_loader_demo_loading') }}
+        {{ menu_item('_loader_demo_loading_fetch_simple') }}
+        {{ menu_item('_loader_demo_translations') }}
+        {{ menu_item('_loader_demo_icons') }}
+    </ul>
+{% endblock %}
