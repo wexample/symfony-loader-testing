@@ -8,7 +8,7 @@
 
 {%- block page_body -%}
     <h2>{{ '@page::domains.title' | trans }}</h2>
-    <div class="block">
+    <div class="block block--padded">
         <p>{{ '@page::domains.body' | trans }}</p>
         {% set code %}// {{ '@page::domains.context.layout' | trans }}
 {{ "{{ '@layout::meta.description' | trans }}" }}
@@ -18,7 +18,7 @@
     </div>
 
     <h2>{{ '@page::includes.title' | trans }}</h2>
-    <div class="block">
+    <div class="block block--padded">
         <p>{{ '@page::includes.body' | trans | raw }}</p>
         {% set code %}# translation-file-one.en.yml
 example_key:
@@ -33,7 +33,7 @@ example_key:
     </div>
 
     <h2>{{ '@page::extends.title' | trans }}</h2>
-    <div class="block">
+    <div class="block block--padded">
         <p>{{ '@page::extends.body' | trans | raw }}</p>
         {% set code %}# translation-file-two.en.yml
 ~extends: '@translation-file-one'{% endset %}
@@ -41,12 +41,12 @@ example_key:
     </div>
 
     <h2>{{ '@page::cache.title' | trans }}</h2>
-    <div class="block">
+    <div class="block block--padded">
         <p>{{ '@page::cache.body' | trans }}</p>
     </div>
 
     <h2>{{ '@page::javascript.title' | trans }}</h2>
-    <div class="block">
+    <div class="block block--padded">
         <p>{{ '@page::javascript.body' | trans }}</p>
         {% set code %}// template.html.twig
 trans_js('@page::javascript.*'){% endset %}
