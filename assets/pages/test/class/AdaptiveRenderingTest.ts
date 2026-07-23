@@ -1,4 +1,4 @@
-import ModalComponent from '@wexample/symfony-loader/components/modal';
+import ModalComponent from '@wexample/symfony-design-system/components/modal';
 import LayoutInterface from '@wexample/symfony-loader/js/Interfaces/RenderData/LayoutInterface';
 import { timeSleep } from '@wexample/js-helpers/Helper/Time';
 import { stringToScreamingSnake } from '@wexample/js-helpers/Helper/String';
@@ -37,7 +37,7 @@ export default class AdaptiveRenderingTest extends AbstractTest {
 
       this.assertEquals(
         modal.view,
-        `@WexampleSymfonyLoaderBundle/components/modal`,
+        `@WexampleSymfonyDesignSystemBundle/components/modal`,
         'The focused page is a child of modal component'
       );
 
