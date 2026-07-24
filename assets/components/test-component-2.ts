@@ -1,4 +1,4 @@
-import TestComponent from '@wexample/symfony-loader/js/Class/Component/TestComponent';
+import TestComponent from '@wexample/symfony-loader-testing/js/Class/TestComponent';
 
 export default class extends TestComponent {
   protected suffix: string = '-2';
