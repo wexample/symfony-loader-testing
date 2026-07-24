@@ -191,7 +191,7 @@ export default class AdaptiveRenderingTest extends AbstractTest {
 
     let testComponent = this.app.layout.pageFocused
       .findChildRenderNodeByView('@WexampleSymfonyLoaderBundle/components/vue')
-      .findChildRenderNodeByView('@WexampleSymfonyLoaderBundle/components/test-component');
+      .findChildRenderNodeByView('@WexampleSymfonyLoaderTestingBundle/components/test-component');
 
     this.assertFalse(
       testComponent.isMounted,
