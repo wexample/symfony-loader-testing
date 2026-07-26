@@ -11,7 +11,7 @@
                 <p>{{ '@page::init.parent.body' | trans }}</p>
                 <div>{{ component_init_parent(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-init') }}</div>
             </div>
-            <div class="doc-section--code block block--body">
+            <div class="doc-section--code">
                 {%- set code -%}
                     {%- verbatim %}<div class="it-will-be-component-element">
     {{ component_init_parent(render_pass, '@Bundle/components/my-component') }}
@@ -29,7 +29,7 @@
                 <div class="it-will-be-component-element">...</div>
                 {{ component_init_previous(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-init') }}
             </div>
-            <div class="doc-section--code block block--body">
+            <div class="doc-section--code">
                 {%- set code -%}
                     {%- verbatim %}<div class="it-will-be-component-element">...</div>
 {{ component_init_previous(render_pass, '@Bundle/components/my-component') }}{%- endverbatim -%}
@@ -46,7 +46,7 @@
                     {{ '@page::init.class.placeholder' | trans }}
                 </div>
             </div>
-            <div class="doc-section--code block block--body">
+            <div class="doc-section--code">
                 {%- set code -%}
                     {%- verbatim %}<div class="{{ component_init_class(render_pass, '@Bundle/components/my-component') }}">
     ...
@@ -63,7 +63,7 @@
                 <div>{{ '@page::init.server_side.placeholder' | trans }}</div>
                 {{ component(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-server-side-component') }}
             </div>
-            <div class="doc-section--code block block--body">
+            <div class="doc-section--code">
                 {%- set code -%}
                     {%- verbatim %}{{ component(render_pass, '@Bundle/components/my-component') }}{%- endverbatim -%}
                 {%- endset -%}
