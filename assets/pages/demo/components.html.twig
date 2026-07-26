@@ -9,11 +9,11 @@
             <div class="doc-section--description">
                 <h3>{{ '@page::init.parent.title' | trans }}</h3>
                 <p>{{ '@page::init.parent.body' | trans }}</p>
-                {{ component_init_parent(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-init') }}
+                <div>{{ component_init_parent(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-init') }}</div>
             </div>
             <div class="doc-section--code block block--body">
                 {%- set code -%}
-                    {%- verbatim -%}<div class="it-will-be-component-element">
+                    {%- verbatim %}<div class="it-will-be-component-element">
     {{ component_init_parent(render_pass, '@Bundle/components/my-component') }}
     ...
 </div>{%- endverbatim -%}
@@ -31,7 +31,7 @@
             </div>
             <div class="doc-section--code block block--body">
                 {%- set code -%}
-                    {%- verbatim -%}<div class="it-will-be-component-element">...</div>
+                    {%- verbatim %}<div class="it-will-be-component-element">...</div>
 {{ component_init_previous(render_pass, '@Bundle/components/my-component') }}{%- endverbatim -%}
                 {%- endset -%}
                 {{ include('@WexampleSymfonyDesignSystemBundle/partials/code-block.html.twig', {lang: 'twig', code: code}) }}
@@ -48,7 +48,7 @@
             </div>
             <div class="doc-section--code block block--body">
                 {%- set code -%}
-                    {%- verbatim -%}<div class="{{ component_init_class(render_pass, '@Bundle/components/my-component') }}">
+                    {%- verbatim %}<div class="{{ component_init_class(render_pass, '@Bundle/components/my-component') }}">
     ...
 </div>{%- endverbatim -%}
                 {%- endset -%}
@@ -65,7 +65,7 @@
             </div>
             <div class="doc-section--code block block--body">
                 {%- set code -%}
-                    {%- verbatim -%}{{ component(render_pass, '@Bundle/components/my-component') }}{%- endverbatim -%}
+                    {%- verbatim %}{{ component(render_pass, '@Bundle/components/my-component') }}{%- endverbatim -%}
                 {%- endset -%}
                 {{ include('@WexampleSymfonyDesignSystemBundle/partials/code-block.html.twig', {lang: 'twig', code: code}) }}
             </div>
