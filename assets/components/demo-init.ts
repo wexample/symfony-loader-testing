@@ -4,6 +4,9 @@ export default class extends Component {
   async mounted() {
     await super.mounted();
 
-    this.el.innerHTML = `<span class="success">✅</span>${this.el.innerHTML}`;
+    const status = document.createElement('span');
+    status.className = 'status status--success';
+    status.textContent = '✓ Component loaded';
+    this.el.prepend(status);
   }
 }
