@@ -16,8 +16,6 @@ init:
   class:
     title: Via a CSS class
     body: The component uses the DOM element carrying the auto-generated CSS class as its root.
-    placeholder: Component content lives here.
   server_side:
     title: Server-side component
     body: Produced by a PHP class on the server. Allows reading files, querying the database, using services, or altering page content during rendering.
-    placeholder: Server-side rendered component.

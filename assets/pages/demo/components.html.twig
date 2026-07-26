@@ -42,9 +42,7 @@
             <div class="doc-section--description">
                 <h3>{{ '@page::init.class.title' | trans }}</h3>
                 <p>{{ '@page::init.class.body' | trans }}</p>
-                <div class="block block--body {{ component_init_class(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-init') }}">
-                    {{ '@page::init.class.placeholder' | trans }}
-                </div>
+                <div class="{{ component_init_class(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-init') }}"></div>
             </div>
             <div class="doc-section--code">
                 {%- set code -%}
@@ -60,7 +58,7 @@
             <div class="doc-section--description">
                 <h3>{{ '@page::init.server_side.title' | trans }}</h3>
                 <p>{{ '@page::init.server_side.body' | trans }}</p>
-                <div>{{ '@page::init.server_side.placeholder' | trans }}</div>
+                <div></div>
                 {{ component(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-server-side-component') }}
             </div>
             <div class="doc-section--code">
