@@ -1,39 +1,69 @@
 {%- extends '@WexampleSymfonyLoaderTestingBundle/layouts/demo/layout.html.twig' -%}
 
 {%- block page_body -%}
-    <h2>{{ '@page::components.init.title' | trans }}</h2>
-    <h3>{{ '@page::components.init.parent.title' | trans }}</h3>
-    <div class="block">
-        {{ '@page::components.init.parent.body' | trans }}
-        {{ component_init_parent(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-init') }}
-    </div>
-    <div class="block">
-        &lt;div class="it-will-be-component-element"&gt;<br>
-        &nbsp;&nbsp;{{ '{{ component_init_parent(\'components/demo-init\') }}' }}<br>
-        &nbsp;&nbsp;...<br>
-        &lt;/div&gt;
-    </div>
-    <h3>{{ '@page::components.init.previous.title' | trans }}</h3>
-    <div class="block">
-        {{ '@page::components.init.previous.body' | trans }}
-    </div>
-    {{ component_init_previous(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-init') }}
-    <div class="block">
-        &lt;div class="it-will-be-component-element"&gt;...&lt;/div&gt;<br>
-        {{ '{{ component_init_previous(\'components/demo-init\') }}' }}<br>
+    <h2>Component Initialization</h2>
+    <p>There are several ways to bind a component to a DOM element. Each method determines which element the component will use as its root.</p>
+
+    <h3>Via the parent</h3>
+    <p>The component uses its containing DOM element as its root.</p>
+    <div class="stack--horizontal">
+        <div class="block block--body">
+            {{ component_init_parent(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-init') }}
+        </div>
+        <div class="block block--body">
+            {%- set code -%}
+                {%- verbatim -%}<div class="it-will-be-component-element">
+    {{ component_init_parent(render_pass, '@Bundle/components/my-component') }}
+    ...
+</div>{%- endverbatim -%}
+            {%- endset -%}
+            {{ include('@WexampleSymfonyDesignSystemBundle/partials/code-block.html.twig', {lang: 'twig', code: code}) }}
+        </div>
     </div>
 
-    <h3>{{ '@page::components.init.class.title' | trans }}</h3>
-    <div class="block {{ component_init_class(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-init') }}">
-        {{ '@page::components.init.class.body' | trans }}
-    </div>
-    <div class="block">
-        &lt;div class="it-will-be-component-element {{ '{{ component_init_class(\'components/demo-init\') }}' }}"&gt;...&lt;/div&gt;
+    <h3>Via the previous element</h3>
+    <p>The component uses the preceding sibling DOM element as its root.</p>
+    <div class="stack--horizontal">
+        <div class="block block--body">
+            <div class="it-will-be-component-element">...</div>
+            {{ component_init_previous(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-init') }}
+        </div>
+        <div class="block block--body">
+            {%- set code -%}
+                {%- verbatim -%}<div class="it-will-be-component-element">...</div>
+{{ component_init_previous(render_pass, '@Bundle/components/my-component') }}{%- endverbatim -%}
+            {%- endset -%}
+            {{ include('@WexampleSymfonyDesignSystemBundle/partials/code-block.html.twig', {lang: 'twig', code: code}) }}
+        </div>
     </div>
 
-    <h3>{{ '@page::components.init.server_side.title' | trans }}</h3>
-    <div class="block">
-        {{ '@page::components.init.server_side.body' | trans }}
-        {{ component(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-server-side-component') }}
+    <h3>Via a CSS class</h3>
+    <p>The component uses the DOM element carrying the auto-generated CSS class as its root.</p>
+    <div class="stack--horizontal">
+        <div class="block block--body {{ component_init_class(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-init') }}">
+            Component content lives here.
+        </div>
+        <div class="block block--body">
+            {%- set code -%}
+                {%- verbatim -%}<div class="{{ component_init_class(render_pass, '@Bundle/components/my-component') }}">
+    ...
+</div>{%- endverbatim -%}
+            {%- endset -%}
+            {{ include('@WexampleSymfonyDesignSystemBundle/partials/code-block.html.twig', {lang: 'twig', code: code}) }}
+        </div>
+    </div>
+
+    <h3>Server-side component</h3>
+    <p>Produced by a PHP class on the server. Allows reading files, querying the database, using services, or altering page content during rendering.</p>
+    <div class="stack--horizontal">
+        <div class="block block--body">
+            {{ component(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-server-side-component') }}
+        </div>
+        <div class="block block--body">
+            {%- set code -%}
+                {%- verbatim -%}{{ component(render_pass, '@Bundle/components/my-component') }}{%- endverbatim -%}
+            {%- endset -%}
+            {{ include('@WexampleSymfonyDesignSystemBundle/partials/code-block.html.twig', {lang: 'twig', code: code}) }}
+        </div>
     </div>
 {%- endblock -%}
