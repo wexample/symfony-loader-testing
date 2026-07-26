@@ -22,7 +22,6 @@ final class DemoController extends AbstractPagesController
     final public const ROUTE_ASSETS = VariableHelper::ASSETS;
     final public const ROUTE_AGGREGATION = 'aggregation';
     final public const ROUTE_COLOR_SCHEMES = 'color_schemes';
-    final public const ROUTE_LOADING = VariableHelper::LOADING;
     final public const ROUTE_COMPONENTS = VariableHelper::PLURAL_COMPONENT;
 
     private bool $useJs = true;
@@ -31,7 +30,6 @@ final class DemoController extends AbstractPagesController
     {
         return [
             self::ROUTE_COMPONENTS,
-            self::ROUTE_LOADING,
         ];
     }
 
