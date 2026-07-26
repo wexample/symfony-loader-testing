@@ -14,10 +14,9 @@
                         render_pass,
                         '@WexampleSymfonyDesignSystemBundle/components/button',
                         {
+                            options: {class: 'demo-button-switch-usage', attr: {'data-usage-name': usage, 'data-usage-value': key}},
                             label: key,
-                            icon:'ph:bold/play',
-                            class: 'demo-button-switch-usage',
-                            attr: {'data-usage-name': usage, 'data-usage-value': key}
+                            icon:'ph:bold/play'
                         }) }}
                 </div>
             {% endfor %}
