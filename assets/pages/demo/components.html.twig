@@ -1,11 +1,11 @@
 {%- extends '@WexampleSymfonyLoaderTestingBundle/layouts/demo/layout.html.twig' -%}
 
 {%- block page_body -%}
-    <h2>Component Initialization</h2>
-    <p>There are several ways to bind a component to a DOM element. Each method determines which element the component will use as its root.</p>
+    <h2>{{ '@page::section.init.title' | trans }}</h2>
+    <p>{{ '@page::section.init.intro' | trans }}</p>
 
-    <h3>Via the parent</h3>
-    <p>The component uses its containing DOM element as its root.</p>
+    <h3>{{ '@page::init.parent.title' | trans }}</h3>
+    <p>{{ '@page::init.parent.body' | trans }}</p>
     <div class="stack--horizontal">
         <div class="block block--body">
             {{ component_init_parent(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-init') }}
@@ -21,8 +21,8 @@
         </div>
     </div>
 
-    <h3>Via the previous element</h3>
-    <p>The component uses the preceding sibling DOM element as its root.</p>
+    <h3>{{ '@page::init.previous.title' | trans }}</h3>
+    <p>{{ '@page::init.previous.body' | trans }}</p>
     <div class="stack--horizontal">
         <div class="block block--body">
             <div class="it-will-be-component-element">...</div>
@@ -37,11 +37,11 @@
         </div>
     </div>
 
-    <h3>Via a CSS class</h3>
-    <p>The component uses the DOM element carrying the auto-generated CSS class as its root.</p>
+    <h3>{{ '@page::init.class.title' | trans }}</h3>
+    <p>{{ '@page::init.class.body' | trans }}</p>
     <div class="stack--horizontal">
         <div class="block block--body {{ component_init_class(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-init') }}">
-            Component content lives here.
+            {{ '@page::init.class.placeholder' | trans }}
         </div>
         <div class="block block--body">
             {%- set code -%}
@@ -53,10 +53,11 @@
         </div>
     </div>
 
-    <h3>Server-side component</h3>
-    <p>Produced by a PHP class on the server. Allows reading files, querying the database, using services, or altering page content during rendering.</p>
+    <h3>{{ '@page::init.server_side.title' | trans }}</h3>
+    <p>{{ '@page::init.server_side.body' | trans }}</p>
     <div class="stack--horizontal">
         <div class="block block--body">
+            <div>{{ '@page::init.server_side.placeholder' | trans }}</div>
             {{ component(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-server-side-component') }}
         </div>
         <div class="block block--body">
