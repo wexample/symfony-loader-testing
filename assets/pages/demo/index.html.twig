@@ -1,5 +1,72 @@
 {%- extends '@WexampleSymfonyLoaderTestingBundle/layouts/demo/layout.html.twig' -%}
 
-{% block page_body %}
-    {{ '@page::body' | trans }}
-{% endblock %}
+{%- block page_body -%}
+    <h2>{{ '@page::section.init.title' | trans }}</h2>
+    <p>{{ '@page::section.init.intro' | trans }}</p>
+
+    <div class="doc">
+        <div class="doc-section">
+            <div class="doc-section--description">
+                <h3>{{ '@page::init.parent.title' | trans }}</h3>
+                <p>{{ '@page::init.parent.body' | trans }}</p>
+                <div>{{ component_init_parent(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-init') }}</div>
+            </div>
+            <div class="doc-section--code">
+                {%- set code -%}
+                    {%- verbatim %}<div class="it-will-be-component-element">
+    {{ component_init_parent(render_pass, '@Bundle/components/my-component') }}
+    ...
+</div>{%- endverbatim -%}
+                {%- endset -%}
+                {{ include('@WexampleSymfonyDesignSystemBundle/partials/code-block.html.twig', {lang: 'twig', code: code}) }}
+            </div>
+        </div>
+
+        <div class="doc-section">
+            <div class="doc-section--description">
+                <h3>{{ '@page::init.previous.title' | trans }}</h3>
+                <p>{{ '@page::init.previous.body' | trans }}</p>
+                <div class="it-will-be-component-element"></div>
+                {{ component_init_previous(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-init') }}
+            </div>
+            <div class="doc-section--code">
+                {%- set code -%}
+                    {%- verbatim %}<div class="it-will-be-component-element">...</div>
+{{ component_init_previous(render_pass, '@Bundle/components/my-component') }}{%- endverbatim -%}
+                {%- endset -%}
+                {{ include('@WexampleSymfonyDesignSystemBundle/partials/code-block.html.twig', {lang: 'twig', code: code}) }}
+            </div>
+        </div>
+
+        <div class="doc-section">
+            <div class="doc-section--description">
+                <h3>{{ '@page::init.class.title' | trans }}</h3>
+                <p>{{ '@page::init.class.body' | trans }}</p>
+                <div class="{{ component_init_class(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-init') }}"></div>
+            </div>
+            <div class="doc-section--code">
+                {%- set code -%}
+                    {%- verbatim %}<div class="{{ component_init_class(render_pass, '@Bundle/components/my-component') }}">
+    ...
+</div>{%- endverbatim -%}
+                {%- endset -%}
+                {{ include('@WexampleSymfonyDesignSystemBundle/partials/code-block.html.twig', {lang: 'twig', code: code}) }}
+            </div>
+        </div>
+
+        <div class="doc-section">
+            <div class="doc-section--description">
+                <h3>{{ '@page::init.server_side.title' | trans }}</h3>
+                <p>{{ '@page::init.server_side.body' | trans }}</p>
+                <div></div>
+                {{ component(render_pass, '@WexampleSymfonyLoaderTestingBundle/components/demo-server-side-component') }}
+            </div>
+            <div class="doc-section--code">
+                {%- set code -%}
+                    {%- verbatim %}{{ component(render_pass, '@Bundle/components/my-component') }}{%- endverbatim -%}
+                {%- endset -%}
+                {{ include('@WexampleSymfonyDesignSystemBundle/partials/code-block.html.twig', {lang: 'twig', code: code}) }}
+            </div>
+        </div>
+    </div>
+{%- endblock -%}
