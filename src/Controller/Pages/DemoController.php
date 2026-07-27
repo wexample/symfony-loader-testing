@@ -18,7 +18,6 @@ final class DemoController extends AbstractPagesController
     use SymfonyLoaderTestingBundleClassTrait;
 
     final public const ROUTE_INDEX = VariableHelper::INDEX;
-    final public const ROUTE_COLOR_SCHEMES = 'color_schemes';
     final public const ROUTE_COMPONENTS = VariableHelper::PLURAL_COMPONENT;
 
     private bool $useJs = true;
@@ -51,29 +50,4 @@ final class DemoController extends AbstractPagesController
         return $renderPass;
     }
 
-    #[Route(
-        path: 'color-schemes',
-        name: self::ROUTE_COLOR_SCHEMES
-    )]
-    final public function colorSchemes(): Response
-    {
-        // Prepare specific render pass.
-        $renderPass = $this->createRenderPass(
-            $this->buildControllerTemplatePath(
-                self::ROUTE_COLOR_SCHEMES,
-            )
-        );
-
-        // Allow every usage switch.
-        foreach ($renderPass->usagesConfig as &$config) {
-            foreach ($config['list'] as &$item) {
-                $item['allow_switch'] = true;
-            }
-        }
-
-        return $this->renderPage(
-            self::ROUTE_COLOR_SCHEMES,
-            renderPass: $renderPass
-        );
-    }
 }
