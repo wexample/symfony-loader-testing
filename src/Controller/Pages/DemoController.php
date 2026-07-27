@@ -2,7 +2,6 @@
 
 namespace Wexample\SymfonyLoaderTesting\Controller\Pages;
 
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Wexample\SymfonyHelpers\Attribute\SimpleRoutesController;
@@ -19,8 +18,6 @@ final class DemoController extends AbstractPagesController
     use SymfonyLoaderTestingBundleClassTrait;
 
     final public const ROUTE_INDEX = VariableHelper::INDEX;
-    final public const ROUTE_ASSETS = VariableHelper::ASSETS;
-    final public const ROUTE_AGGREGATION = 'aggregation';
     final public const ROUTE_COLOR_SCHEMES = 'color_schemes';
     final public const ROUTE_COMPONENTS = VariableHelper::PLURAL_COMPONENT;
 
@@ -52,39 +49,6 @@ final class DemoController extends AbstractPagesController
         );
 
         return $renderPass;
-    }
-
-    #[Route(
-        path: VariableHelper::ASSETS,
-        name: self::ROUTE_ASSETS
-    )]
-    final public function assets(Request $request): Response
-    {
-        $this->useJs = ! $request->get('no_js');
-
-        return $this->renderPage(
-            self::ROUTE_ASSETS,
-        );
-    }
-
-    #[Route(
-        path: self::ROUTE_AGGREGATION,
-        name: self::ROUTE_AGGREGATION
-    )]
-    final public function aggregation(): Response
-    {
-        // Prepare specific render pass.
-        $renderPass = $this->createRenderPass(
-            $this->buildControllerTemplatePath(
-                self::ROUTE_AGGREGATION,
-            )
-        );
-        $renderPass->enableAggregation = true;
-
-        return $this->renderPage(
-            self::ROUTE_AGGREGATION,
-            renderPass: $renderPass
-        );
     }
 
     #[Route(

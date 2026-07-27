@@ -1,4 +1,3 @@
-import AggregationTest from './class/AggregationTest';
 import AdaptiveRenderingTest from './class/AdaptiveRenderingTest';
 import AppTest from './class/AppTest';
 import HelperTest from './class/HelperTest';
@@ -16,11 +15,9 @@ import TestManagerPage from '../../js/Class/TestManagerPage';
 import LayoutTest from "./class/LayoutTest";
 import VueTest from "./class/VueTest";
 
-
 export default class extends TestManagerPage {
   async pageReady() {
     await this.runTests({
-      AggregationTest,
       AdaptiveRenderingTest,
       AppTest,
       IconTest,
@@ -38,12 +35,5 @@ export default class extends TestManagerPage {
       VueTest,
     });
 
-    // Run test without aggregation.
-    const location = window.location;
-    if (!this.app.layout.vars.enableAggregation && !(new URLSearchParams(location.search)).get('no-test-aggregation')) {
-      location.replace(
-        `${location.origin}${location.pathname}?test-aggregation=1`
-      );
-    }
   }
 }

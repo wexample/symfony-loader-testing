@@ -34,8 +34,6 @@ final class TestController extends AbstractPagesController
             'demo'
         );
 
-        $renderPass->enableAggregation = $request->get('test-aggregation', false);
-
         return $this->renderPage(
             self::ROUTE_INDEX,
             renderPass: $renderPass
