@@ -23,13 +23,6 @@
             {{ ('@page::breakpoints.body_' ~ (render_pass.isUseJs() ? '' : 'no_') ~ 'js') | trans | raw }}
         </div>
     </div>
-    <h2>{{ '@page::resources.title' | trans }}</h2>
-    <div class="block block--body">
-        {{ ('@page::resources.body_' ~ (render_pass.isUseJs() ? '' : 'no_') ~ 'js') | trans | raw }}
-	    {% if render_pass.isUseJs() %}
-	        {{ vue(render_pass, '@WexampleSymfonyLoaderBundle/vue/debug-assets') }}
-	    {% endif %}
-    </div>
     <h2>{{ '@page::page.title' | trans }}</h2>
     <div class="block block--body">
         {{ '@page::page.body' | trans }}

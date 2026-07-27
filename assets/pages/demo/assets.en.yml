@@ -30,8 +30,3 @@ page:
   body: >
     Each Page class has an <code>updateCurrentResponsiveDisplay</code> callback allowing it to react to
     screen size changes. In this example, this function manages the highlighted breakpoint change above.
-
-resources:
-  title: Resources
-  body_js: Here is the list of assets currently used by the page.
-  body_no_js: The resource list only updates dynamically when JavaScript is enabled. You can find the list directly in the page source.
