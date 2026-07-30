@@ -80,7 +80,7 @@ export default class ResponsiveTest extends AbstractTest {
 
       // Test component responsive.
       for (let componentResponsiveSize of breakPoints) {
-        component.responsiveSet(componentResponsiveSize);
+        component.responsiveSet(componentResponsiveSize, false);
 
         await timeSleep(this.responsiveActivationWaitDuration);
 
