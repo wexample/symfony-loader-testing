@@ -1,21 +1,3 @@
-# symfony_loader_testing
-
-Version: 2.0.0
-
-`wexample/symfony-loader-testing` is a Symfony bundle that ships the fixture pages used to exercise `wexample/symfony-loader` and `wexample/symfony-design-system` in a real browser: layouts, components, Vue views, translations and responsive stylesheets, served by three controllers mounted under `_loader/test/`, `_loader/demo/` and `_loader/translations/`. Loading the test index runs the suite client-side — assets/pages/test/index.ts hands a list of test classes to `TestManagerPage.runTests()`, which reports each assertion in the console — so adaptive rendering, routing, usages, overlays or the no-JS fallback are checked against a rendered page rather than a mock.
-
-It is meant for people working on the loader stack itself, not for application code: install it in a development Symfony app when you need to see what the renderer actually produces.
-
-## Table of Contents
-
-- [Architecture](#architecture)
-- [Integration in the Suite](#integration-in-the-suite)
-- [Dependencies](#dependencies)
-- [Versioning & Compatibility Policy](#versioning--compatibility-policy)
-- [License](#license)
-- [About us](#about-us)
-- [Migration Notes](#migration-notes)
-
 ## Architecture
 
 The bundle is two halves of very unequal weight. `src/` holds six PHP classes — a bundle, an extension, a trait and three controllers — and does little more than expose routes and hand a template path to the loader. `assets/` holds what is actually under test: layouts, pages, components, Vue views, stylesheets and translation files whose *filenames* the loader is supposed to discover on its own, plus the TypeScript classes that assert it did. There is no PHP test suite and no bundler config here; assertions run in a browser when you open a page.
@@ -99,49 +81,3 @@ assets/pages/test/class/AbstractTest.ts sits between `UnitTest` and the concrete
 ### Expected values live in the fixtures
 
 Nothing is mocked, so an assertion's expected value is a literal placed in a template or a translation file. `assets/layouts/test/layout.en.yml` maps `string.client_side` to `CLIENT_SIDE_LAYOUT_TRANSLATION`, which is exactly what `TranslationTest` compares against; `adaptive.en.yml` sets `page_title: ADAPTIVE_PAGE_TITLE`, read back from the modal header; `adaptive.html.twig` emits `NO_JS_TEXT` under `{% if not render_pass.useJs %}`, which is all `NoJsTest` looks for. The same holds for colours: the responsive and adaptive stylesheets apply green, and tests assert the string `'rgb(0, 128, 0)'`. Changing a fixture string, a colour or a filename is changing a test.
-
-## Integration in the Suite
-
-This package is part of the Wexample Suite — a collection of high-quality, modular tools designed to work seamlessly together across multiple languages and environments.
-
-### Related Packages
-
-The suite includes packages for configuration management, file handling, prompts, and more. Each package can be used independently or as part of the integrated suite.
-
-Visit the [Wexample Suite documentation](https://docs.wexample.com) for the complete package ecosystem.
-
-## Dependencies
-
-- php: >=8.2
-- wexample/symfony-loader: >=4.0.0
-- wexample/symfony-design-system: >=6.0.0
-
-## Versioning & Compatibility Policy
-
-Wexample packages follow **Semantic Versioning** (SemVer):
-
-- **MAJOR**: Breaking changes
-- **MINOR**: New features, backward compatible
-- **PATCH**: Bug fixes, backward compatible
-
-We maintain backward compatibility within major versions and provide clear migration guides for breaking changes.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-Free to use in both personal and commercial projects.
-
-## About us
-
-[Wexample](https://wexample.com) stands as a cornerstone of the digital ecosystem — a collective of seasoned engineers, researchers, and creators driven by a relentless pursuit of technological excellence. More than a media platform, it has grown into a vibrant community where innovation meets craftsmanship, and where every line of code reflects a commitment to clarity, durability, and shared intelligence.
-
-This packages suite embodies this spirit. Trusted by professionals and enthusiasts alike, it delivers a consistent, high-quality foundation for modern development — open, elegant, and battle-tested. Its reputation is built on years of collaboration, refinement, and rigorous attention to detail, making it a natural choice for those who demand both robustness and beauty in their tools.
-
-Wexample cultivates a culture of mastery. Each package, each contribution carries the mark of a community that values precision, ethics, and innovation — a community proud to shape the future of digital craftsmanship.
-
-## Migration Notes
-
-When upgrading between major versions, refer to the migration guides in the documentation.
-
-Breaking changes are clearly documented with upgrade paths and examples.
