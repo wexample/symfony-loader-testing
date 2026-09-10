@@ -24,7 +24,7 @@
     }
   ],
   "require": {
-    "php": ">=8.2",
+    "php": ">=8.5",
     "wexample/symfony-loader": ">=5.0.0",
     "wexample/symfony-design-system": ">=10.0.0"
   },
@@ -47,5 +47,10 @@
     "post-update-cmd": [
       "[ -f bin/console ] && php bin/console loader:check-node-install || echo 'Skipping console command (no Symfony app)'"
     ]
+  },
+  "extra": {
+    "install": {
+      "bundle_env": "dev"
+    }
   }
 }
