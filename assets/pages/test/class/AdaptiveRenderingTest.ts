@@ -17,7 +17,7 @@ export default class AdaptiveRenderingTest extends AbstractTest {
   async testNonAdaptivePage() {
     await this.fetchTestPageAdaptiveHtml(
       'VIEW',
-      this.app.services.routing.path('_loader_test_view')
+      this.app.services.routing.path('loader_test_view')
     );
   }
 
@@ -223,7 +223,7 @@ export default class AdaptiveRenderingTest extends AbstractTest {
 
   async testAdaptiveErrorMissingView() {
     await this.app.services.adaptive
-      .get(this.app.services.routing.path('_loader_test_error_missing_view'))
+      .get(this.app.services.routing.path('loader_test_error_missing_view'))
       .then(async () => {
         let pageFocused = this.app.layout.pageFocused;
 

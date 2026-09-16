@@ -8,7 +8,7 @@ use Wexample\SymfonyHelpers\Helper\VariableHelper;
 use Wexample\SymfonyLoader\Controller\AbstractPagesController;
 use Wexample\SymfonyLoaderTesting\Traits\SymfonyLoaderTestingBundleClassTrait;
 
-#[Route(path: '_loader/translations/', name: '_loader_translations_')]
+#[Route(path: 'loader/translations/', name: 'loader_translations_')]
 final class TranslationsController extends AbstractPagesController
 {
     use SymfonyLoaderTestingBundleClassTrait;

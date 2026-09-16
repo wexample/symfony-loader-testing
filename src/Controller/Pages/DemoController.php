@@ -10,7 +10,7 @@ use Wexample\SymfonyLoader\Rendering\RenderPass;
 use Wexample\SymfonyLoader\Service\Usage\FontsAssetUsageService;
 use Wexample\SymfonyLoaderTesting\Traits\SymfonyLoaderTestingBundleClassTrait;
 
-#[Route(path: '_loader/demo/', name: '_loader_demo_')]
+#[Route(path: 'loader/demo/', name: 'loader_demo_')]
 final class DemoController extends AbstractPagesController
 {
     use SymfonyLoaderTestingBundleClassTrait;
