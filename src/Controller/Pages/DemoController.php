@@ -7,7 +7,6 @@ use Symfony\Component\Routing\Attribute\Route;
 use Wexample\SymfonyHelpers\Helper\VariableHelper;
 use Wexample\SymfonyLoader\Controller\AbstractPagesController;
 use Wexample\SymfonyLoader\Rendering\RenderPass;
-use Wexample\SymfonyLoader\Service\Usage\FontsAssetUsageService;
 use Wexample\SymfonyLoaderTesting\Traits\SymfonyLoaderTestingBundleClassTrait;
 
 #[Route(path: 'loader/demo/', name: 'loader_demo_')]
@@ -31,11 +30,6 @@ final class DemoController extends AbstractPagesController
         RenderPass $renderPass
     ): RenderPass {
         $renderPass->setUseJs($this->useJs);
-
-        $renderPass->setUsage(
-            FontsAssetUsageService::getName(),
-            'demo'
-        );
 
         return $renderPass;
     }

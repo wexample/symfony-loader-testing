@@ -7,7 +7,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Wexample\SymfonyHelpers\Helper\VariableHelper;
 use Wexample\SymfonyLoader\Controller\AbstractPagesController;
-use Wexample\SymfonyLoader\Service\Usage\FontsAssetUsageService;
 use Wexample\SymfonyLoaderTesting\Traits\SymfonyLoaderTestingBundleClassTrait;
 
 #[Route(path: 'loader/test/', name: 'loader_test_')]
@@ -27,11 +26,6 @@ final class TestController extends AbstractPagesController
             $this->buildControllerTemplatePath(
                 self::ROUTE_INDEX,
             )
-        );
-
-        $renderPass->setUsage(
-            FontsAssetUsageService::getName(),
-            'demo'
         );
 
         return $this->renderPage(
