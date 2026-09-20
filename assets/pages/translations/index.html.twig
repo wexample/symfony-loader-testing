@@ -14,7 +14,7 @@
 {{ "{{ '@layout::meta.description' | trans }}" }}
 // {{ '@page::domains.context.page' | trans }}
 {{ "{{ '@page::page_title' | trans }}" }}{% endset %}
-        {{ include('@WexampleSymfonyDesignSystemBundle/partials/code-block.html.twig', {lang: 'twig', code: code}) }}
+        {{ include('@WexampleSymfonyDesignSystemBundle/components/code-block/code-block.html.twig', {lang: 'twig', code: code}) }}
     </div>
 
     <h2>{{ '@page::includes.title' | trans }}</h2>
@@ -29,7 +29,7 @@ example_key:
   # Using this key resolves to the first file
   # using the same key "example_key.example_sub_key"
   example_sub_key: '@translation-file-one::%'{% endset %}
-        {{ include('@WexampleSymfonyDesignSystemBundle/partials/code-block.html.twig', {lang: 'yaml', code: code}) }}
+        {{ include('@WexampleSymfonyDesignSystemBundle/components/code-block/code-block.html.twig', {lang: 'yaml', code: code}) }}
     </div>
 
     <h2>{{ '@page::extends.title' | trans }}</h2>
@@ -37,7 +37,7 @@ example_key:
         <p>{{ '@page::extends.body' | trans | raw }}</p>
         {% set code %}# translation-file-two.en.yml
 ~extends: '@translation-file-one'{% endset %}
-        {{ include('@WexampleSymfonyDesignSystemBundle/partials/code-block.html.twig', {lang: 'yaml', code: code}) }}
+        {{ include('@WexampleSymfonyDesignSystemBundle/components/code-block/code-block.html.twig', {lang: 'yaml', code: code}) }}
     </div>
 
     <h2>{{ '@page::cache.title' | trans }}</h2>
@@ -50,10 +50,10 @@ example_key:
         <p>{{ '@page::javascript.body' | trans }}</p>
         {% set code %}// template.html.twig
 trans_js('@page::javascript.*'){% endset %}
-        {{ include('@WexampleSymfonyDesignSystemBundle/partials/code-block.html.twig', {lang: 'twig', code: code}) }}
+        {{ include('@WexampleSymfonyDesignSystemBundle/components/code-block/code-block.html.twig', {lang: 'twig', code: code}) }}
         {% set code %}// Hello Javascript!
 app.layout.page.trans('@page::javascript.demo_text');{% endset %}
-        {{ include('@WexampleSymfonyDesignSystemBundle/partials/code-block.html.twig', {lang: 'javascript', code: code}) }}
+        {{ include('@WexampleSymfonyDesignSystemBundle/components/code-block/code-block.html.twig', {lang: 'javascript', code: code}) }}
         <p>
             <button onclick="alert(app.layout.page.trans('@page::javascript.demo_text'));">{{ '@page::javascript.test_button' | trans }}</button>
         </p>

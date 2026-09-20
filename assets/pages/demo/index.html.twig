@@ -18,7 +18,7 @@
     ...
 </div>{%- endverbatim -%}
                 {%- endset -%}
-                {{ include('@WexampleSymfonyDesignSystemBundle/partials/code-block.html.twig', {lang: 'twig', code: code}) }}
+                {{ include('@WexampleSymfonyDesignSystemBundle/components/code-block/code-block.html.twig', {lang: 'twig', code: code}) }}
             </div>
         </div>
 
@@ -34,7 +34,7 @@
                     {%- verbatim %}<div class="it-will-be-component-element">...</div>
 {{ component_init_previous(render_pass, '@Bundle/components/my-component') }}{%- endverbatim -%}
                 {%- endset -%}
-                {{ include('@WexampleSymfonyDesignSystemBundle/partials/code-block.html.twig', {lang: 'twig', code: code}) }}
+                {{ include('@WexampleSymfonyDesignSystemBundle/components/code-block/code-block.html.twig', {lang: 'twig', code: code}) }}
             </div>
         </div>
 
@@ -50,7 +50,7 @@
     ...
 </div>{%- endverbatim -%}
                 {%- endset -%}
-                {{ include('@WexampleSymfonyDesignSystemBundle/partials/code-block.html.twig', {lang: 'twig', code: code}) }}
+                {{ include('@WexampleSymfonyDesignSystemBundle/components/code-block/code-block.html.twig', {lang: 'twig', code: code}) }}
             </div>
         </div>
 
@@ -65,7 +65,7 @@
                 {%- set code -%}
                     {%- verbatim %}{{ component(render_pass, '@Bundle/components/my-component') }}{%- endverbatim -%}
                 {%- endset -%}
-                {{ include('@WexampleSymfonyDesignSystemBundle/partials/code-block.html.twig', {lang: 'twig', code: code}) }}
+                {{ include('@WexampleSymfonyDesignSystemBundle/components/code-block/code-block.html.twig', {lang: 'twig', code: code}) }}
             </div>
         </div>
     </div>
