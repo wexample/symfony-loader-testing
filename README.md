@@ -1,6 +1,6 @@
 # symfony_loader_testing
 
-Version: 3.0.0
+Version: 5.0.0
 
 `wexample/symfony-loader-testing` is a Symfony bundle that ships the fixture pages used to exercise `wexample/symfony-loader` and `wexample/symfony-design-system` in a real browser: layouts, components, Vue views, translations and responsive stylesheets, served by three controllers mounted under `_loader/test/`, `_loader/demo/` and `_loader/translations/`. Loading the test index runs the suite client-side — assets/pages/test/index.ts hands a list of test classes to `TestManagerPage.runTests()`, which reports each assertion in the console — so adaptive rendering, routing, usages, overlays or the no-JS fallback are checked against a rendered page rather than a mock.
 
@@ -63,14 +63,14 @@ public static function getBundleClassName(): string
 
 so `renderPage()` looks for views under this bundle rather than under the host application.
 
-Both ways of configuring a render pass are exercised on purpose. `DemoController` overrides the hook, `protected function configureRenderPass(RenderPass $renderPass): RenderPass`, and sets `$renderPass->setUsage(FontsAssetUsageService::getName(), 'demo')` there. `TestController::index()` builds the pass by hand instead, with `$this->createRenderPass($this->buildControllerTemplatePath(self::ROUTE_INDEX))`, then passes it as `renderPage(self::ROUTE_INDEX, renderPass: $renderPass)`. `adaptive()` turns a rendering mode into a query parameter — `if ($request->get('no-js')) { $renderPass->setUseJs(false); }` — and `errorMissingVue()` deliberately renders a route whose template does not exist: the missing-view error is a fixture like any other.
+Both ways of configuring a render pass are exercised on purpose. `DemoController` overrides the hook, `protected function configureRenderPass(RenderPass $renderPass): RenderPass`, and sets `$renderPass->setUseJs($this->useJs)` there. `TestController::index()` builds the pass by hand instead, with `$this->createRenderPass($this->buildControllerTemplatePath(self::ROUTE_INDEX))`, then passes it as `renderPage(self::ROUTE_INDEX, renderPass: $renderPass)`. `adaptive()` turns a rendering mode into a query parameter — `if ($request->get('no-js')) { $renderPass->setUseJs(false); }` — and `errorMissingVue()` deliberately renders a route whose template does not exist: the missing-view error is a fixture like any other.
 
 ### The asset tree is the fixture
 
 Files are grouped by render node, not by extension. A node named `x` in a directory owns `x.html.twig`, `x.ts`, `x.scss` and `x.en.yml` / `x.fr.yml`, and the loader finds them by name alone. The suffix conventions are themselves the thing being tested:
 
 - responsive variants — assets/pages/test/index-xs.scss through `index-xxl.scss`, each colouring one `.test-responsive-<size>` block green, and `index-xs.ts` … `index-xxl.ts`, each a `PageResponsiveDisplay` incrementing `this.page.vars.responsiveSizesCounters.xs` on enter;
-- usage variants — assets/layouts/demo/layout.fonts.demo.scss, `layout.color-scheme.dark.scss`, `layout.margins.fat.scss`, `layout.animations.bounce.scss`: the file selected by `setUsage(FontsAssetUsageService::getName(), 'demo')` is `layout.fonts.demo.scss`;
+- usage variants — assets/layouts/demo/layout.color-scheme.dark.scss and `layout.color-scheme.light.scss`: the layout ships one file per value of an axis, and the loader picks the one the current usage names. Only the colour scheme is exercised here; the other axes are left to the design system, which declares real values for them.
 - Vue views come in pairs — assets/vue/test-vue.vue for the `<script>` (props, data, `components`) and assets/vue/test-vue.vue.twig for the template, where server rendering and Vue bindings mix through the `vue_key` filter.
 
 Two layouts sit above the pages. `layouts/test/layout.html.twig` extends `layouts/demo/layout.html.twig`, which extends `'@front/layouts/private/layout.html.twig'` — supplied by the host application. The bundle cannot render anything on its own; it needs a Symfony app providing `@front`.
@@ -113,8 +113,8 @@ Visit the [Wexample Suite documentation](https://docs.wexample.com) for the comp
 ## Dependencies
 
 - php: >=8.5
-- wexample/symfony-loader: >=6.0.0
-- wexample/symfony-design-system: >=11.0.0
+- wexample/symfony-loader: >=7.0.0
+- wexample/symfony-design-system: >=13.0.0
 
 ## Versioning & Compatibility Policy
 
