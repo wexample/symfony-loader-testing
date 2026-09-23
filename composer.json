@@ -3,7 +3,7 @@
   "description": "A dynamic rendering system for Symfony",
   "type": "library",
   "license": "MIT",
-  "version": "5.0.5",
+  "version": "5.0.6",
   "keywords": [
     "symfony-ux"
   ],
@@ -26,7 +26,7 @@
   "require": {
     "php": ">=8.5",
     "wexample/symfony-loader": ">=11.0.0",
-    "wexample/symfony-design-system": ">=18.0.0"
+    "wexample/symfony-design-system": ">=19.0.0"
   },
   "require-dev": {
     "phpunit/phpunit": "*"
